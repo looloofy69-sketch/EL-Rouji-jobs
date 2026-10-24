@@ -24,6 +24,7 @@ The current supported attachment formats are PNG, JPEG, WebP, TXT, MD, CSV, and 
 - [Security, privacy, and trust boundaries](docs/SECURITY_PRIVACY.md)
 - [Operations, QA, and release runbook](docs/OPERATIONS_QA_RELEASE.md)
 - [Future jobs and scheduler specification](docs/JOBS_DESIGN_SPEC.md)
+- [ADR-001: Candidate AppDeploy-native job runtime (proposed, not approved)](docs/ADR-001-APPDEPLOY-JOB-RUNTIME.md)
 - [Change log](CHANGELOG.md)
 
 ## Repository boundaries
@@ -43,5 +44,6 @@ The current supported attachment formats are PNG, JPEG, WebP, TXT, MD, CSV, and 
 - The CI shim is **not** a functional replacement for hosted authentication or image processing. Never deploy a bundle built with that shim.
 - No release tag has been created in the core repository. Hosted QA, account-isolation checks, security/privacy review, and full-tree development-tool audit disposition remain open.
 - Scheduled jobs, recurring workflows, voice, and general third-party integrations are not current app capabilities.
+- AppDeploy provides native cron and database primitives, but the jobs runtime remains unimplemented; see the proposed runtime ADR before making an implementation decision.
 
 See [core source and readiness notes](https://github.com/looloofy69-sketch/EL-Rouji/tree/main) before making implementation claims. Documentation is not evidence that an item has passed a live test.

@@ -10,6 +10,11 @@ This document defines what must be decided and verified before a persistent jobs
 
 The first delivery should solve a clearly scoped operational requirement; it should not silently imply that existing prompt starters or the Planning mode execute future tasks.
 
+
+## 1A. Platform-native runtime candidate
+
+The connected AppDeploy SDK reference documents native cron handlers and a durable database API. These are candidate primitives for a low-volume first implementation, not proof that this repository has an operational queue or worker. The platform has bounded call/item sizes, quotas, a six-cron limit, and post-read filtering for db.list; a queue design must demonstrate bounded due-job selection and checkpointing before implementation. See [ADR-001](ADR-001-APPDEPLOY-JOB-RUNTIME.md). That ADR is proposed, not approved. No cron configuration or production handler is added by this document update.
+
 ## 2. Terminology
 
 - **Job:** one bounded unit of work with an input, owner/system scope, lifecycle state, execution attempt history, and result.
